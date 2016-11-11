@@ -86,6 +86,9 @@ class AutocacheBehavior extends ModelBehavior {
 			'dummy_datasource' => 'autocache',
 			
 		), (array) $config);
+
+		// call a ConnectionManager method so that it is initialized
+		ConnectionManager::sourceList();
 	}
 
 	/**
