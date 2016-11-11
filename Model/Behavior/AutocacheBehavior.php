@@ -115,7 +115,7 @@ class AutocacheBehavior extends ModelBehavior {
 		$this->_loadCachedResults($model);
 
 		// Return the cached results if they exist
-		if ($this->__cached_results) {
+		if ($this->__cached_results!==false) {
 
 			// Note the original useDbConfig
 			$this->runtime['real_datasource'] = $model->useDbConfig;
@@ -147,7 +147,7 @@ class AutocacheBehavior extends ModelBehavior {
 	public function afterFind(Model $model, $results, $primary = false) {
 
 		// Check if we obtained cached results
-		if ($this->__cached_results) {
+		if ($this->__cached_results!==false) {
 
 			// reset the useDbConfig attribute back to what it was
 			$model->useDbConfig = $this->runtime['real_datasource'];
