@@ -36,7 +36,7 @@ class AutocacheBehavior extends ModelBehavior {
 	 * 
 	 * @var array
 	 */
-	private $__cached_results = null;
+	private $__cached_results = false;
 
 	/**
 	 * setup
